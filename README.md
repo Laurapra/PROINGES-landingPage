@@ -290,7 +290,7 @@ chore: actualizar tareas de build, configuración, etc
 
 ## Licencia
 
-Este proyecto es propiedad privada de **PROINGES**. Todos los derechos reservados © 2024.
+Este proyecto es propiedad privada de **PROINGES**. Todos los derechos reservados © 2025.
 
 Para uso comercial o consultas de licencia, contacta a: soporte@proinges.com.co
 
@@ -302,7 +302,7 @@ Para uso comercial o consultas de licencia, contacta a: soporte@proinges.com.co
 
 - Website: [www.proinges.com.co](https://www.gesproes.com)
 - Email: soporte@proinges.com.co
-- LinkedIn: [PROINGES]([https://www.linkedin.com/company/proinges-sas])
+- LinkedIn: [PROINGES](https://www.linkedin.com/company/proinges-sas)
 - WhatsApp: +57 XXX XXX XXXX
 
 **Desarrollado por:** Laura Rodriguez - FullStack Developer
