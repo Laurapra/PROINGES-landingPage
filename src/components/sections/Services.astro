@@ -1,0 +1,32 @@
+---
+import ServiceCard from '../ui/ServiceCard.astro';
+import { SERVICES } from '../../utils/constants';
+---
+
+<section class="py-20 bg-white dark:bg-[#0c181d]" id="que-hacemos">
+  <div class="max-w-7xl mx-auto px-4 md:px-10">
+    <!-- Section Header -->
+    <div class="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
+      <h2 class="text-secondary dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
+        Qué Hacemos
+      </h2>
+      <div class="h-1 w-20 bg-primary rounded-full mb-6"></div>
+      <p class="text-slate-600 dark:text-slate-400 text-lg">
+        Ofrecemos soluciones tecnológicas para el monitoreo y la automatización de procesos, que permiten gestionar información en tiempo real y optimizar flujos operativos, facilitando a las organizaciones una mayor eficiencia, control y toma de decisiones.
+        <br>
+        Nuestras soluciones se adaptan a diferentes sectores, brindando sistemas escalables, seguros y orientados a la transformación digital de pocesos.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {SERVICES.map((service) => (
+        <ServiceCard 
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+        />
+      ))}
+    </div>
+  </div>
+</section>

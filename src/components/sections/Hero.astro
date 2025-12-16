@@ -1,0 +1,70 @@
+---
+import { Rocket } from 'lucide-astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="relative w-full pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden bg-background-light dark:bg-background-dark">
+  <!-- Abstract Background -->
+  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+  <div class="layout-container max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Column - Content -->
+      <div class="flex flex-col gap-6 text-left">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-white/5 border border-blue-100 dark:border-white/10 w-fit">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent dark:text-blue-300">
+            Innovación Tecnológica
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tight text-secondary dark:text-white">
+          Transformación Digital y 
+          <span class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+            Desarrollo de Software
+          </span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-xl">
+          Impulsamos su negocio hacia el futuro mediante soluciones tecnológicas personalizadas, automatización inteligente y consultoría experta.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 pt-2">
+          <Button href="#que-hacemos">
+            Conoce Nuestros Servicios
+          </Button>
+          <!-- PUT THE PROJECTS HERE WHEN YOU HAVE THEM
+          <Button variant="secondary" href="#beneficios">
+            Ver Casos de Éxito
+          </Button>
+          -->
+        </div>
+      </div>
+
+      <!-- Right Column - Image -->
+      <div class="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
+        <img 
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuARME5e504VbJYohbAUprXm1REuZR_1_93dTiXta1FT7JEMq0nSsUiSOjbq947lmX9aBJSIqVYPkv1cSmGqwLKn4ko_D6JTSm0ykFcj_bU5OIEHa_Ra93ozPe2hbiuSjLFVDyUEQJGZQdvOKTE1reGIOOPpdCTbaJBC8JZUzL7ip3sshl0xeQVnJdLuENKsYh0LsS6lf5qJEJTrrITL5Pq1DY6SHy8LwvwylVkb3_Dpj0yivdxtBcBUkSQs3qJkZw7Mx1a_aih-svFw" 
+          alt="Modern corporate office with glowing digital data overlays representing technology" 
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent"></div>
+        <div class="absolute bottom-8 left-8 right-8 text-white">
+          <div class="flex items-center gap-3 mb-2">
+            <Rocket class="w-5 h-5 text-primary" />
+            <span class="text-sm font-bold uppercase tracking-wider">Potencie su crecimiento</span>
+          </div>
+          <p class="text-sm text-white/80">
+            Soluciones escalables diseñadas para el mercado global.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

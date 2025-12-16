@@ -1,0 +1,103 @@
+---
+import { Menu, X } from "lucide-astro";
+import { SITE, NAVIGATION } from "../../utils/constants";
+import Button from "../ui/Button.astro";
+---
+
+<header
+  class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-background-dark/80 border-b border-[#e6f1f4] dark:border-white/10"
+>
+  <div
+    class="px-4 md:px-10 py-3 flex items-center justify-between max-w-7xl mx-auto"
+  >
+    <!-- Logo -->
+    <div class="flex items-center gap-4 text-secondary dark:text-white">
+      <img src="/LOGO-PROINGES-sinBG.png" alt="PROINGES Logo" class="h-8 w-auto" />
+      <h2
+        class="text-2xl font-black tracking-tight text-secondary dark:text-white"
+      >
+        {SITE.name}
+      </h2>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-9">
+      {
+        NAVIGATION.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- CTA Button Desktop -->
+    <div class="hidden md:block">
+      <Button size="sm" href="#contacto"> Cotizar Proyecto </Button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden text-secondary dark:text-white"
+      aria-label="Abrir menú"
+    >
+      <Menu class="w-6 h-6" />
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-[#e6f1f4] dark:border-white/10"
+  >
+    <nav class="px-4 py-4 space-y-4">
+      {
+        NAVIGATION.map((item) => (
+          <a
+            href={item.href}
+            class="block text-base font-medium hover:text-primary transition-colors dark:text-gray-200"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <div class="pt-4">
+        <Button size="sm" class="w-full" href="#contacto">
+          Cotizar Proyecto
+        </Button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !menuButton?.contains(e.target as Node) &&
+      !mobileMenu?.contains(e.target as Node)
+    ) {
+      mobileMenu?.classList.add("hidden");
+    }
+  });
+
+  // Close mobile menu on navigation
+  const mobileLinks = mobileMenu?.querySelectorAll("a");
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+</script>

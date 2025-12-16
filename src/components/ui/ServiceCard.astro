@@ -1,0 +1,37 @@
+---
+import { 
+  Code2, 
+  Bot, 
+  Network,
+  Lightbulb 
+} from 'lucide-astro';
+
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+
+const iconComponents = {
+  'code': Code2,
+  'bot': Bot,
+  'network-wired': Network,
+  'lightbulb': Lightbulb,
+};
+
+const IconComponent = iconComponents[icon as keyof typeof iconComponents] || Code2;
+---
+
+<div class="group relative p-8 rounded-xl bg-background-light dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-primary/30 dark:hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5">
+  <div class="w-14 h-14 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+    <IconComponent class="w-8 h-8" />
+  </div>
+  <h3 class="text-xl font-bold text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors">
+    {title}
+  </h3>
+  <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+    {description}
+  </p>
+</div>

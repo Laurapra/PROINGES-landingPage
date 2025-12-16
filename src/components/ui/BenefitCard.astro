@@ -1,0 +1,45 @@
+---
+import { 
+  PiggyBank, 
+  TrendingUp, 
+  ShieldCheck, 
+  Zap 
+} from 'lucide-astro';
+
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  color: 'green' | 'blue' | 'purple' | 'orange';
+}
+
+const { icon, title, description, color } = Astro.props;
+
+const iconComponents = {
+  'piggy-bank': PiggyBank,
+  'trending-up': TrendingUp,
+  'shield-check': ShieldCheck,
+  'zap': Zap,
+};
+
+const colorClasses = {
+  green: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
+  blue: 'bg-blue-100 dark:bg-blue-900/30 text-primary',
+  purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
+  orange: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
+};
+
+const IconComponent = iconComponents[icon as keyof typeof iconComponents] || PiggyBank;
+---
+
+<div class="bg-white dark:bg-[#152329] p-6 rounded-xl shadow-lg shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-white/5 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300">
+  <div class={`w-10 h-10 rounded-full flex items-center justify-center mb-4 ${colorClasses[color]}`}>
+    <IconComponent class="w-5 h-5" />
+  </div>
+  <h3 class="text-lg font-bold text-secondary dark:text-white mb-2">
+    {title}
+  </h3>
+  <p class="text-slate-600 dark:text-slate-400 text-sm flex-grow">
+    {description}
+  </p>
+</div>

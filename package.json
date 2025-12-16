@@ -1,0 +1,21 @@
+{
+  "name": "proinges-langing",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "astro": "^5.16.5",
+    "lucide-astro": "^0.556.0",
+    "resend": "^6.6.0"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "tailwindcss": "^3.4.19"
+  }
+}

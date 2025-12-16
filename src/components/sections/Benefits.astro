@@ -1,0 +1,42 @@
+---
+import { ArrowRight } from 'lucide-astro';
+import BenefitCard from '../ui/BenefitCard.astro';
+import { BENEFITS } from '../../utils/constants';
+---
+
+<section class="py-24 bg-gradient-to-b from-background-light to-white dark:from-background-dark dark:to-[#0b161a] relative overflow-hidden" id="beneficios">
+  <!-- Decoration -->
+  <div class="absolute top-1/2 left-0 w-full h-[500px] -translate-y-1/2 bg-gradient-to-r from-primary/5 to-transparent skew-y-3 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div class="max-w-2xl">
+        <h2 class="text-secondary dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
+          Beneficios Clave para su Empresa
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-lg">
+          ¿Por qué elegir PROINGES? Nuestras soluciones están diseñadas para generar impacto real y medible.
+        </p>
+      </div>
+      <!-- 
+      <button class="flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group">
+        Descargar Brochure
+        <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      </button>
+      -->
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {BENEFITS.map((benefit) => (
+        <BenefitCard 
+          icon={benefit.icon}
+          title={benefit.title}
+          description={benefit.description}
+          color={benefit.color}
+        />
+      ))}
+    </div>
+  </div>
+</section>
