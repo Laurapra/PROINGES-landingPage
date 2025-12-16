@@ -37,7 +37,7 @@ const { id, title } = Astro.props;
     </div>
 
     <!-- Content -->
-    <div class="overflow-y-auto p-6 prose prose-slate dark:prose-invert max-w-none">
+    <div class="overflow-y-auto p-6 modal-prose">
       <slot />
     </div>
 
@@ -127,32 +127,49 @@ const { id, title } = Astro.props;
     }
   }
 
-  /* Estilos para el contenido del modal */
-  .prose {
-    color: inherit;
+  /* Estilos mejorados para el contenido del modal */
+  .modal-prose {
+    @apply text-slate-700 dark:text-slate-300;
   }
   
-  .prose h3 {
+  .modal-prose h3 {
     @apply text-xl font-bold text-secondary dark:text-white mt-6 mb-3;
   }
   
-  .prose h4 {
+  .modal-prose h4 {
     @apply text-lg font-bold text-secondary dark:text-white mt-4 mb-2;
   }
   
-  .prose p {
+  .modal-prose p {
     @apply text-slate-600 dark:text-slate-400 mb-4 leading-relaxed;
   }
   
-  .prose ul {
-    @apply text-slate-600 dark:text-slate-400 space-y-2 mb-4;
+  .modal-prose ul {
+    @apply text-slate-600 dark:text-slate-400 space-y-2 mb-4 list-disc;
   }
   
-  .prose li {
-    @apply ml-6;
+  .modal-prose li {
+    @apply ml-6 text-slate-600 dark:text-slate-400;
   }
   
-  .prose strong {
+  .modal-prose strong {
     @apply text-secondary dark:text-white font-semibold;
+  }
+
+  .modal-prose a {
+    @apply text-primary hover:text-accent dark:text-primary dark:hover:text-sky-400 underline;
+  }
+
+  /* Scrollbar personalizado para el contenido */
+  .modal-prose::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .modal-prose::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-white/5 rounded;
+  }
+
+  .modal-prose::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-white/20 rounded hover:bg-slate-400 dark:hover:bg-white/30;
   }
 </style>
