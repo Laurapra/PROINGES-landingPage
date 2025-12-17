@@ -5,10 +5,10 @@ interface Props {
   image?: string;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Transformación Digital y Desarrollo de Software. Impulsamos su negocio hacia el futuro mediante soluciones tecnológicas personalizadas.",
-  image = "/og-image.jpg" 
+  image = "/og-image.jpg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -26,27 +26,48 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    
+
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    
+    <!--Chrome Icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/android-chrome-512x512.png"
+    />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="canonical" href={canonicalURL} />
-    
+
     <!-- Prevenir flash de tema (IMPORTANTE - antes de todo) -->
     <script is:inline>
       // Este script se ejecuta ANTES de que se renderice la página
       function getThemePreference() {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
       }
-      
+
       const theme = getThemePreference();
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
       }
     </script>
 
@@ -67,7 +88,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-background-light dark:bg-background-dark text-[#0c181d] font-display antialiased overflow-x-hidden">
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#0c181d] font-display antialiased overflow-x-hidden"
+  >
     <slot />
   </body>
 </html>
