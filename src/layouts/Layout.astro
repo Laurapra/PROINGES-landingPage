@@ -20,42 +20,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalURL} />
-    <!-- FAVICONS -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-    <!-- Android Chrome Icons -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="/android-chrome-512x512.png"
-    />
-
-    <!-- Web Manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#0099cc" />
-
-    <link rel="canonical" href={canonicalURL} />
-
-    <!-- Prevenir flash de tema (IMPORTANTE - antes de todo) -->
+    
+    <!-- Prevenir flash de tema (IMPORTANTE - PRIMERO) -->
     <script is:inline>
-      // Este script se ejecuta ANTES de que se renderice la página
       function getThemePreference() {
         if (
           typeof localStorage !== "undefined" &&
@@ -75,6 +42,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         document.documentElement.classList.remove("dark");
       }
     </script>
+
+    <!-- FAVICONS (orden optimizado) -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    
+    <!-- Web Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0099cc" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
