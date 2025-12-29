@@ -16,22 +16,22 @@ export const SERVICES = [
   {
     icon: 'code',
     title: 'Desarrollo de Software',
-    description: 'Creamos aplicaciones web y móviles a medida, robustas y escalables, utilizando las últimas tecnologías del mercado.',
+    description: 'Creamos aplicaciones web y móviles, robustas y escalables, utilizando tecnologías actuales.',
   },
   {
     icon: 'bot',
     title: 'Automatización de Procesos',
-    description: 'Implementamos soluciones RPA y workflows inteligentes para reducir tareas manuales y aumentar la eficiencia operativa.',
-  },
-  {
-    icon: 'network-wired',
-    title: 'Integración de Sistemas',
-    description: 'Unificamos sus plataformas y herramientas existentes en un ecosistema conectado para un flujo de datos sin interrupciones.',
+    description: 'Implementamos RPA, workflows inteligentes e integración de plataformas para optimizar procesos y mejorar la eficiencia operativa.',
   },
   {
     icon: 'lightbulb',
-    title: 'Innovación y Consultoría',
-    description: 'Asesoramiento estratégico para la adopción de nuevas tecnologías que mantengan a su empresa competitiva y relevante.',
+    title: 'Innovación y Consultoría Tecnológica',
+    description: 'Asesoramiento estratégico para la adopción de nuevas tecnologías y procesos de transformación digital.',
+  },
+  {
+    icon: 'sun',
+    title: 'Interventoría en Infraestructura Eléctrica',
+    description: 'Realizamos interventoría técnica y administrativa a la implementación del servicio de energía mediante redes eléctricas convencionales y sistemas solares fotovoltaicos.',
   },
 ] as const;
 
@@ -80,7 +80,7 @@ export const FOOTER_LINKS = {
 
 export const CONTACT_INFO = {
   email: 'soporte@proinges.com.co',
-  phone: '+57 (313) 766-0548',
+  phone: '+57 (350) 265-7553',
   location: ' Calle 76 Número 38b- 57 Barranquilla, Colombia',
   hours: {
     weekdays: '8:00 AM - 6:00 PM',
