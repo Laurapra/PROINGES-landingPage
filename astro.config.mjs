@@ -3,5 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://proinges.com', 
+  site: 'https://proinges.com',
+  output: 'static',
 });
