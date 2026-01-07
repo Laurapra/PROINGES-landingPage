@@ -1,19 +1,13 @@
 ---
-import SchemaOrg from '../components/SchemaOrg.astro';
-import { SITE, OG_IMAGE, CONTACT_INFO } from '../utils/constants';
-
 interface Props {
   title?: string;
   description?: string;
 }
 
 const { 
-  title = SITE.title, 
-  description = SITE.description 
+  title = 'PROINGES - Transformación Digital',
+  description = 'Soluciones tecnológicas en Colombia'
 } = Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, SITE.url);
-const ogImageURL = new URL(OG_IMAGE.url, SITE.url);
 ---
 
 <!doctype html>
@@ -21,53 +15,17 @@ const ogImageURL = new URL(OG_IMAGE.url, SITE.url);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
     
-    <!-- SEO Básico -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="keywords" content={SITE.keywords} />
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImageURL} />
-    <meta property="og:image:width" content={OG_IMAGE.width.toString()} />
-    <meta property="og:image:height" content={OG_IMAGE.height.toString()} />
-    <meta property="og:site_name" content={SITE.name} />
-    <meta property="og:locale" content="es_CO" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonicalURL} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImageURL} />
-    
-    <!-- Información de la Empresa -->
-    <meta name="author" content={SITE.name} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="geo.region" content="CO-ATL" />
-    <meta name="geo.placename" content={CONTACT_INFO.city} />
-    <meta name="geo.position" content={`${CONTACT_INFO.coordinates.lat};${CONTACT_INFO.coordinates.lng}`} />
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="JqZAOWVaUO1hbhisP4XTsq3wXoztq4zEDfEpO8qMHqk" />
     
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0099cc" />
     
-    <!--Google Search Console Verification -->
-    <meta name="google-site-verification" content="JqZAOWVaUO1hbhisP4XTsq3wXoztq4zEDfEpO8qMHqk" />
-    
-    <!-- Schema.org Structured Data -->
-    <SchemaOrg />
-    
-    <!-- Inline Theme Script -->
+    <!-- Theme Script -->
     <script is:inline>
       const theme = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
