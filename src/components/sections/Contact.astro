@@ -1,9 +1,10 @@
 ---
-import { Mail, Phone, MapPin, Send } from 'lucide-astro';
+import { Mail, Phone, MapPin, Clock } from 'lucide-astro';
 ---
 
 <section class="py-20 bg-white dark:bg-[#0c181d]" id="contacto">
   <div class="max-w-7xl mx-auto px-4 md:px-10">
+    <!-- Section Header -->
     <div class="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
       <h2 class="text-secondary dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
         Contáctanos
@@ -14,174 +15,89 @@ import { Mail, Phone, MapPin, Send } from 'lucide-astro';
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div class="space-y-8">
-        <div>
-          <h3 class="text-2xl font-bold text-secondary dark:text-white mb-6">
-            Información de Contacto
-          </h3>
-          <p class="text-slate-600 dark:text-slate-400 mb-8">
-            Estamos aquí para responder tus preguntas y ayudarte con tus necesidades tecnológicas.
-          </p>
-        </div>
-
-        <div class="space-y-6">
-          <div class="flex items-start gap-4 group">
-            <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-              <Mail class="w-6 h-6" />
-            </div>
-            <div>
-              <h4 class="font-bold text-secondary dark:text-white mb-1">Email</h4>
-              <a href="mailto:soporte@proinges.com.co" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
-                soporte@proinges.com.co
-              </a>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4 group">
-            <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-              <Phone class="w-6 h-6" />
-            </div>
-            <div>
-              <h4 class="font-bold text-secondary dark:text-white mb-1">Teléfono</h4>
-              <a href="tel:+573137660548" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
-                +57 (313) 766-0548
-              </a>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4 group">
-            <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-              <MapPin class="w-6 h-6" />
-            </div>
-            <div>
-              <h4 class="font-bold text-secondary dark:text-white mb-1">Ubicación</h4>
-              <p class="text-slate-600 dark:text-slate-400">
-                Barranquilla, Colombia
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-background-light dark:bg-white/5 p-6 rounded-xl border border-slate-100 dark:border-white/10">
-          <h4 class="font-bold text-secondary dark:text-white mb-3">Horario de Atención</h4>
-          <div class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-            <div class="flex justify-between">
-              <span>Lunes - Viernes:</span>
-              <span class="font-semibold">8:00 AM - 6:00 PM</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Sábado:</span>
-              <span class="font-semibold">Cerrado</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Domingo:</span>
-              <span class="font-semibold">Cerrado</span>
-            </div>
-          </div>
-        </div>
+    <!-- Contact Information - Centered -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Information Header -->
+      <div class="text-center mb-10">
+        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-4">
+          Información de Contacto
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">
+          Estamos aquí para responder tus preguntas y ayudarte con tus necesidades tecnológicas.
+        </p>
       </div>
 
-      <div class="bg-background-light dark:bg-white/5 p-8 rounded-xl border border-slate-100 dark:border-white/10">
-        <form id="contact-form" class="space-y-6">
-          <div>
-            <label for="name" class="block text-sm font-bold text-secondary dark:text-white mb-2">
-              Nombre Completo *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-white/20 bg-white dark:bg-white/5 text-secondary dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-              placeholder="Juan Pérez"
-            />
+      <!-- Contact Items Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Email Contact -->
+        <div class="flex items-start gap-4 group p-6 rounded-xl bg-background-light dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-primary dark:hover:border-primary transition-all">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+            <Mail class="w-6 h-6" />
           </div>
-
           <div>
-            <label for="email" class="block text-sm font-bold text-secondary dark:text-white mb-2">
-              Correo Electrónico *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-white/20 bg-white dark:bg-white/5 text-secondary dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-              placeholder="juan@ejemplo.com"
-            />
+            <h4 class="font-bold text-secondary dark:text-white mb-1">Email</h4>
+            <a href="mailto:soporte@proinges.com.co" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+              soporte@proinges.com.co
+            </a>
           </div>
+        </div>
 
-          <div>
-            <label for="phone" class="block text-sm font-bold text-secondary dark:text-white mb-2">
-              Teléfono
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-white/20 bg-white dark:bg-white/5 text-secondary dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-              placeholder="+57 300 123 4567"
-            />
+        <!-- Phone Contact -->
+        <div class="flex items-start gap-4 group p-6 rounded-xl bg-background-light dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-primary dark:hover:border-primary transition-all">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+            <Phone class="w-6 h-6" />
           </div>
-
           <div>
-            <label for="subject" class="block text-sm font-bold text-secondary dark:text-white mb-2">
-              Asunto *
-            </label>
-            <div class="relative">
-              <select
-                id="subject"
-                name="subject"
-                required
-                class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-white/20 bg-white dark:bg-[#0c181d] text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer pr-10"
-              >
-                <option value="" disabled selected>Selecciona un servicio</option>
-                <option value="desarrollo">Desarrollo de Software</option>
-                <option value="automatizacion">Automatización de Procesos</option>
-                <option value="integracion">Integración de Sistemas</option>
-                <option value="consultoria">Innovación y Consultoría</option>
-                <option value="interventoria">Interventoría en Infraestructura Eléctrica</option>
-                <option value="otro">Otro</option>
-              </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400 dark:text-slate-500">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+            <h4 class="font-bold text-secondary dark:text-white mb-1">Teléfono</h4>
+            <a href="tel:+573137660548" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+              +57 (313) 766-0548
+            </a>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="flex items-start gap-4 group p-6 rounded-xl bg-background-light dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-primary dark:hover:border-primary transition-all">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+            <MapPin class="w-6 h-6" />
+          </div>
+          <div>
+            <h4 class="font-bold text-secondary dark:text-white mb-1">Ubicación</h4>
+            <p class="text-slate-600 dark:text-slate-400">
+              Barranquilla, Colombia
+            </p>
+          </div>
+        </div>
+
+        <!-- Business Hours -->
+        <div class="flex items-start gap-4 group p-6 rounded-xl bg-background-light dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-primary dark:hover:border-primary transition-all">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+            <Clock class="w-6 h-6" />
+          </div>
+          <div class="w-full">
+            <h4 class="font-bold text-secondary dark:text-white mb-3">Horario de Atención</h4>
+            <div class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <div class="flex justify-between">
+                <span>Lunes - Viernes:</span>
+                <span class="font-semibold">8:00 AM - 6:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Sábado:</span>
+                <span class="font-semibold">Cerrado</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Domingo:</span>
+                <span class="font-semibold">Cerrado</span>
               </div>
             </div>
           </div>
-
-          <div>
-            <label for="message" class="block text-sm font-bold text-secondary dark:text-white mb-2">
-              Mensaje *
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="5"
-              class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-white/20 bg-white dark:bg-white/5 text-secondary dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-              placeholder="Cuéntanos sobre tu proyecto..."
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-primary hover:bg-sky-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
-          >
-            <span>Enviar Mensaje</span>
-            <Send class="w-5 h-5" />
-          </button>
-
-          <div id="form-message" class="hidden p-4 rounded-lg text-sm font-medium"></div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<script>
+<!-- Contact Form Script -->
+<!-- <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const formMessage = document.getElementById('form-message') as HTMLElement;
 
@@ -234,4 +150,4 @@ import { Mail, Phone, MapPin, Send } from 'lucide-astro';
       submitButton.innerHTML = originalText;
     }
   });
-</script>
+</script> -->

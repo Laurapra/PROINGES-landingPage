@@ -1,34 +1,47 @@
 ---
-import ServiceCard from '../ui/ServiceCard.astro';
-import { SERVICES } from '../../utils/constants';
+import ServiceCard from "../ui/ServiceCard.astro";
+import { SERVICES } from "../../utils/constants";
 ---
 
 <section class="py-20 bg-white dark:bg-[#0c181d]" id="que-hacemos">
   <div class="max-w-7xl mx-auto px-4 md:px-10">
     <!-- Section Header -->
     <div class="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
-      <h2 class="text-secondary dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
+      <h2
+        class="text-secondary dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-4"
+      >
         Qué Hacemos
       </h2>
       <div class="h-1 w-20 bg-primary rounded-full mb-6"></div>
-      <p class="text-slate-600 dark:text-slate-400 text-lg">
-        Ofrecemos soluciones tecnológicas orientadas a la automatización, integración y gestión de información en tiempo real, que permiten optimizar procesos, mejorar la eficiencia operativa y fortalecer la toma de decisiones en las organizaciones.
-        <br>
-        Adicionalmente, prestamos servicios de interventoría técnica, administrativa y operativa a proyectos de implementación del servicio de enegía eléctrica, mediante redes convencionales y sistemas solares fotovoltaicos, garantizando el cumplimiento normativo, técnico y contractual.
-        <br>
-        Nuestras soluciones y servicios se adaptan a distintos sectores, brindando sistemas escalables, seguros y un acompañamiento especializado orientado a la transformación digital y al desarrollo de infraestructuras energéticas confiables y sostenibles.
+      <p class="text-slate-600 dark:text-slate-400 text-lg text-justify">
+        Ofrecemos soluciones tecnológicas orientadas a la automatización,
+        integración y gestión de información en tiempo real, que permiten
+        optimizar procesos, mejorar la eficiencia operativa y fortalecer la toma
+        de decisiones en las organizaciones.
+        <br /><br />
+        Adicionalmente, prestamos servicios de interventoría técnica, administrativa
+        y operativa a proyectos de implementación del servicio de energía eléctrica,
+        mediante redes convencionales y sistemas solares fotovoltaicos, garantizando
+        el cumplimiento normativo, técnico y contractual.
+        <br /><br />
+        Nuestras soluciones y servicios se adaptan a distintos sectores, brindando
+        sistemas escalables, seguros y un acompañamiento especializado orientado a
+        la transformación digital y al desarrollo de infraestructuras energéticas
+        confiables y sostenibles.
       </p>
     </div>
 
     <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {SERVICES.map((service) => (
-        <ServiceCard 
-          icon={service.icon}
-          title={service.title}
-          description={service.description}
-        />
-      ))}
+      {
+        SERVICES.map((service) => (
+          <ServiceCard
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+          />
+        ))
+      }
     </div>
   </div>
 </section>
