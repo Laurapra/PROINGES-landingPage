@@ -1,8 +1,9 @@
 export const SITE = {
   name: 'PROINGES S.A.S',
-  title: 'PROINGES - Transformación Digital',
-  description: 'Monitoreo de procesos, ingeniería electrónica y automatización ',
-  url: 'https://proinges.com',
+  title: 'PROINGES - Transformación Digital y Desarrollo de Software en Colombia',
+  description: 'Soluciones de automatización, desarrollo de software, integración de sistemas y consultoría tecnológica para empresas en Colombia. Especialistas en transformación digital, interventoría eléctrica y sistemas solares fotovoltaicos en Barranquilla.',
+  url: 'https://proinges.com.co',
+  keywords: 'desarrollo software Colombia, automatización procesos, transformación digital Barranquilla, integración sistemas, consultoría tecnológica, interventoría eléctrica, sistemas solares fotovoltaicos, RPA Colombia, desarrollo web empresarial',
 } as const;
 
 export const NAVIGATION = [
@@ -81,10 +82,34 @@ export const FOOTER_LINKS = {
 export const CONTACT_INFO = {
   email: 'soporte@proinges.com.co',
   phone: '+57 (350) 265-7553',
-  location: ' Calle 76 Número 38b- 57 Barranquilla, Colombia',
+  phoneLink: '+573502657553', // Para enlaces tel:
+  location: 'Calle 76 Número 38b-57, Barranquilla, Colombia',
+  city: 'Barranquilla',
+  region: 'Atlántico',
+  country: 'Colombia',
+  coordinates: {
+    lat: '10.9639',
+    lng: '-74.7964',
+  },
   hours: {
     weekdays: '8:00 AM - 6:00 PM',
     saturday: 'Cerrado',
     sunday: 'Cerrado',
   },
+} as const;
+
+// SEO - Open Graph
+export const OG_IMAGE = {
+  url: '/og-image.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'PROINGES - Transformación Digital en Colombia',
+} as const;
+
+// SEO - Social Media
+export const SOCIAL_LINKS = {
+  linkedin: 'https://www.linkedin.com/company/proinges',
+  facebook: 'https://www.facebook.com/proinges',
+  // instagram: 'https://www.instagram.com/proinges',
+  // youtube: 'https://www.youtube.com/@proinges',
 } as const;

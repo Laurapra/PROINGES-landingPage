@@ -1,0 +1,41 @@
+---
+import { SITE, CONTACT_INFO, SOCIAL_LINKS, SERVICES } from '../utils/constants';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": SITE.name,
+  "alternateName": "PROINGES",
+  "url": SITE.url,
+  "logo": `${SITE.url}/logo.png`,
+  "description": SITE.description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 76 Número 38b-57",
+    "addressLocality": CONTACT_INFO.city,
+    "addressRegion": CONTACT_INFO.region,
+    "addressCountry": CONTACT_INFO.country
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": CONTACT_INFO.coordinates.lat,
+    "longitude": CONTACT_INFO.coordinates.lng
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": CONTACT_INFO.phone,
+    "contactType": "Servicio al Cliente",
+    "email": CONTACT_INFO.email,
+    "availableLanguage": ["es"],
+    "areaServed": "CO"
+  },
+  "sameAs": Object.values(SOCIAL_LINKS),
+  "areaServed": {
+    "@type": "Country",
+    "name": "Colombia"
+  },
+  "serviceType": SERVICES.map(service => service.title)
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
