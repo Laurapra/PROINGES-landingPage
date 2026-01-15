@@ -109,7 +109,7 @@ export const OG_IMAGE = {
 // SEO - Social Media
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/company/proinges',
-  facebook: 'https://www.facebook.com/proinges',
+  facebook: 'https://www.facebook.com/Proinges/',
   // instagram: 'https://www.instagram.com/proinges',
   // youtube: 'https://www.youtube.com/@proinges',
 } as const;
